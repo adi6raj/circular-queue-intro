@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circular Queue Introduction</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header id="header">
+    <div class="header-pattern"></div>
+    <div class="header-content">
+      <h1 id="blinker-text">Welcome to my Python🐍 Projects</h1>
+      <p>Explore interactive designs, animations, and projects.</p>
+    </div>
+  </header>
+  
+
+  <section class="features">
+    <hr>   
+    <h2 id="about">About Me</h2>
+    <ul>
+    <p> 
+      Hello! I'm Adiya Kumar, a passionate college student learning **Python. I'm working on various projects and assignments to improve my programming skills. My goal is to master Python and use it to solve real-world challenges</p>
+    </li>
+    </ul>
+  </section>
+
+  <section id="features" class="features-section">  
+    <h2>Projects</h2>
+    <p>
+        <button onclick="window.open('https://github.com/adi6raj/Calculator.git', '_blank')">Calculator🧮</button><br>
+        A Python project that integrates a GUI calculator with a personal diary app, built using Tkinter.
+        <br><br>
+
+        <button onclick="window.open('https://github.com/adi6raj/To-Do-List.git', '_blank')">To-Do-List✒️</button><br>
+        A tool to generate secure random passwords.
+        <br><br>
+      
+        <button onclick="window.open('https://github.com/adi6raj/Tic-Tac-Toe.git', '_blank')">Tic-Tac-Toe ❌⭕</button><br>
+        A Python-based project that greets users based on the time of day.
+        <br><br>
+
+        <button onclick="window.open('https://github.com/adi6raj/Personal-Diary-Application.git', '_blank')">Personal-Diary-Application🪶📔</button><br>
+        A task management app built with Tkinter, where users can track their to-do lists.
+    </p>
+</section>
+  
+  <section id="other" class="other-section">
+    <h2>Other Highlights</h2>
+    <p>Explore animations and interactive effects throughout the site.</p>
+  </section>
+  
+
+  <section class="example">
+    <h2>Code Example</h2>
+    <pre>
+class CircularQueue:
+    def __init__(self, size):
+        self.size = size
+        self.queue = [None] * size
+        self.front = self.rear = 0
+
+    def enqueue(self, value):
+        if not self.is_full():
+            self.queue[self.rear] = value
+            self.rear = (self.rear + 1) % self.size
+
+    def dequeue(self):
+        if not self.is_empty():
+            value = self.queue[self.front]
+            self.front = (self.front + 1) % self.size
+            return value
+    </pre>
+  </section>
+
+  <footer class="footer">
+    <p>© 2024 Circular Queue Repository</p>
+    <button id="backToTop">Back to Top</button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
