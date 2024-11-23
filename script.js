@@ -27,4 +27,13 @@ function revealOnScroll() {
   
   // Add scroll event listener
   window.addEventListener("scroll", revealOnScroll);
+  document.querySelectorAll('.social-link').forEach((icon) => {
+    icon.addEventListener('mouseover', () => {
+      icon.querySelector('i').style.animation = 'none'; // Stop blinking on hover
+    });
+  
+    icon.addEventListener('mouseleave', () => {
+      icon.querySelector('i').style.animation = 'blink 2s infinite'; // Restart blinking
+    });
+  });
   

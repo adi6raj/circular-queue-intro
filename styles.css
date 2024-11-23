@@ -1,20 +1,20 @@
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #050505;
-    color: #333;
-  }
-  
-  .header {
-    background: #6a6e6a;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-  }
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #0f172a; /* Deep dark blue */
+  color: #e2e8f0; /* Light gray text */
+}
 
-  /* Header Styling */
+.header {
+  background: #6a6e6a;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Header Styling */
 #header {
   position: relative;
   height: 300px;
@@ -35,7 +35,7 @@ body {
   width: 100%;
   height: 100%;
   background-image: radial-gradient(circle, #2563eb 2px, transparent 2px),
-    radial-gradient(circle, #1d4ed8 2px, transparent 2px);
+      radial-gradient(circle, #1d4ed8 2px, transparent 2px);
   background-size: 20px 20px;
   background-position: 0 0, 10px 10px; /* Creates a staggered grid effect */
   opacity: 0.15; /* Subtle pattern */
@@ -62,118 +62,193 @@ body {
   font-size: 1.5rem;
   color: #cbd5e1;
 }
+
 hr {
   border-top: 3px solid #ccc; /* Adjust color and thickness as needed */
   border-radius: 10px;
   margin: 20px 250px; /* Adjust margin as needed */
 }
-  #about
-  {
-    text-align: center;
-  
+
+#about {
+  text-align: center;
 }
-  .features p
-  {
-    color: #f2eeee;
-  }
-  
-  .features, .usage, .example {
-    padding: 1.5rem;
-    background: rgb(37, 40, 108);
-    margin: 1rem auto;
-    max-width: 800px;
-    border-radius: 15px 50px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .features h2, .usage h2, .example h2 {
-    color: #4caf50;
-  }
-  
-  ul {
-    list-style: circle inside;
-  }
-  
-  pre {
-    background: #f7f7f7;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow-x: auto;
-  }
+
+.features p {
+  color: #f2eeee;
+}
+
+.features, .usage, .example {
+  padding: 1.5rem;
+  background: rgb(37, 40, 108);
+  margin: 1rem auto;
+  max-width: 800px;
+  border-radius: 15px 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.features h2, .usage h2, .example h2 {
+  color: #4caf50;
+}
+
+ul {
+  list-style: circle inside;
+}
+
+pre {
+  background: #f7f7f7;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.features-section, .other-section {
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 20px auto;
+  opacity: 0; /* Hidden by default for animation */
+  transform: translateY(30px); /* Start slightly below view */
+}
 
 .features-section {
-    padding: 20px;
+  background: linear-gradient(135deg, #111827, #1f2937);
+  color: #f8fafc;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+  animation: fadeInUp 1.5s ease-out forwards; /* Trigger animation */
 }
 
+.other-section {
+  background: linear-gradient(135deg, #1e293b, #111827);
+  color: #e2e8f0;
+  animation: fadeInUp 2s ease-out forwards; /* Trigger animation */
+}
+
+.features-section h2, .other-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.features-section h2 {
+  color: #38bdf8;
+  text-shadow: 0px 0px 5px rgba(56, 189, 248, 0.8);
+}
+
+.features-section ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+.features-section li {
+  margin: 10px 0;
+  position: relative;
+  animation: slideInLeft 1s ease-out;
+}
+
+.features-section li::before {
+  content: "✔";
+  color: #10b981;
+  margin-right: 10px;
+}
+
+/* Button Styling */
 button {
-    background-color: #1e1e1e; /* Dark button background */
-    color: #ffffff; /* White text color */
-    border: 2px solid #3a3a3a; /* Darker border */
-    border-radius: 100px; /* Rounded corners */
-    padding: 10px 20px; /* Padding for the button */
-    font-size: 16px; /* Font size */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Smooth transition */
-    position: relative; /* For the glossy effect */
-    overflow: hidden; /* To contain the pseudo-element */
+  background-color: #1e1e1e; /* Dark button background */
+  color: #ffffff; /* White text color */
+  border: 2px solid #3a3a3a; /* Darker border */
+  border-radius: 100px; /* Rounded corners */
+  padding: 10px 20px; /* Padding for the button */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Smooth transition */
+  position: relative; /* For the glossy effect */
+  overflow: hidden; /* To contain the pseudo-element */
 }
 
 button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2); /* Glossy overlay */
-    border-radius: 100px; /* Match button's border radius */
-    opacity: 0; /* Start invisible */
-    transition: opacity 0.3s; /* Smooth appearance */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2); /* Glossy overlay */
+  border-radius: 100px; /* Match button's border radius */
+  opacity: 0; /* Start invisible */
+  transition: opacity 0.3s; /* Smooth appearance */
 }
 
 button:hover::before {
-    opacity: 1; /* Show glossy effect on hover */
+  opacity: 1; /* Show glossy effect on hover */
 }
 
 button:hover {
-    background-color: #1b6614; /* Lighter background on hover */
-    transform: scale(1.05); /* Slightly enlarge on hover */
+  background-color: #1b6614; /* Lighter background on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 button:focus {
-    outline: none; /* Remove default outline */
+  outline: none; /* Remove default outline */
 }
 
-/* Blinking effect */
+/* Footer Styling */
+.footer {
+  text-align: center;
+  background: #333;
+  color: white;
+  padding: 1rem 0;
+}
+
+#backToTop {
+  background: #a04923;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+#backToTop:hover {
+  background: #30a023;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(30px); /* Starting position */
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0); /* End position */
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+      opacity: 0;
+      transform: translateX(-50px); /* Start from left */
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0); /* Final position */
+  }
+}
+
+@keyframes blink {
+  50% {
+      opacity: 0; /* Text disappears */
+  }
+  100% {
+      opacity: 1; /* Text reappears */
+  }
+}
+
 .blink {
-    animation: blink-animation 1s steps(5, start) infinite; /* Blink animation */
+  animation: blink 1s infinite; /* Blink every 1 second indefinitely */
 }
 
-@keyframes blink-animation {
-    to {
-        visibility: hidden; /* Hide the button */
-    }
-}
-  .footer {
-    text-align: center;
-    background: #333;
-    color: white;
-    padding: 1rem 0;
-  }
-  
-  #backToTop {
-    background: #4caf50;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  #backToTop:hover {
-    background: #45a049;
-  }
 /* Cool Header Styling */
 .cool-header {
   text-align: center;
@@ -186,7 +261,6 @@ button:focus {
   animation: fadeSlideDown 2s ease-out; /* Header animation */
 }
 
-/* Header Text Glow Effect */
 .cool-header h1 {
   font-size: 2.5rem;
   color: #38bdf8; /* Light blue text */
@@ -198,142 +272,55 @@ button:focus {
   color: #94a3b8; /* Subtle gray for secondary text */
 }
 
-/* Background for the Page */
-body {
-  background-color: #0f172a; /* Deep dark blue */
-  color: #e2e8f0; /* Light gray text */
-  font-family: 'Arial', sans-serif;
+/* Social Handles Section */
+#social-handles {
+  text-align: center;
+  background-color: #1e293b; /* Dark background */
+  color: #e2e8f0;
+  padding: 40px 20px;
+  margin-top: 20px;
 }
 
-/* Blinking Animation (Unchanged) */
+#social-handles h2 {
+  font-size: 2rem;
+  color: #38bdf8;
+  text-shadow: 0px 4px 10px rgba(56, 189, 248, 0.6);
+  margin-bottom: 20px;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-link {
+  text-decoration: none;
+  font-size: 2.5rem;
+  color: #94a3b8;
+  transition: transform 0.3s, color 0.3s;
+  position: relative;
+}
+
+.social-link:hover {
+  color: #38bdf8;
+  transform: scale(1.2);
+}
+
+/* Blinker Effect */
 @keyframes blink {
-  50% {
-    opacity: 0; /* Text disappears */
-  }
-  100% {
-    opacity: 1; /* Text reappears */
-  }
-}
-
-.blink {
-  animation: blink 1s infinite; /* Blink every 1 second indefinitely */
-}
-
-/* Fade and Slide Animation for Header */
-@keyframes fadeSlideDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-30px); /* Move up initially */
-  }
-  100% {
+  0%, 100% {
     opacity: 1;
-    transform: translateY(0); /* Back to original position */
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
   }
 }
 
-/* Blinking Animation */
-@keyframes blink {
-    50% {
-      opacity: 0; /* Text disappears */
-    }
-    100% {
-      opacity: 1; /* Text reappears */
-    }
-  }
-  
-  .blink {
-    animation: blink 1s infinite; /* Blink every 1 second indefinitely */
-  }
-  
+.social-link i {
+  animation: blink 2s infinite;
+}
 
-/* Animation Keyframes */
-@keyframes fadeSlideDown {
-    0% {
-      opacity: 0;
-      transform: translateY(-30px); /* Move up initially */
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0); /* Back to original position */
-    }
-  }
-  /* Features Section Styling */
-.features-section {
-    padding: 50px 20px;
-    text-align: center;
-    background: linear-gradient(135deg, #111827, #1f2937);
-    color: #f8fafc;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
-    opacity: 0; /* Hidden by default for animation */
-    transform: translateY(30px); /* Start slightly below view */
-    animation: fadeInUp 1.5s ease-out forwards; /* Trigger animation */
-  }
-  
-  .features-section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #38bdf8;
-    text-shadow: 0px 0px 5px rgba(56, 189, 248, 0.8);
-  }
-  
-  .features-section ul {
-    list-style-type: none;
-    padding: 0;
-    font-size: 1.2rem;
-  }
-  
-  .features-section li {
-    margin: 10px 0;
-    position: relative;
-    animation: slideInLeft 1s ease-out;
-  }
-  
-  .features-section li::before {
-    content: "✔";
-    color: #10b981;
-    margin-right: 10px;
-  }
-  
-  /* Other Section Styling */
-  .other-section {
-    padding: 50px 20px;
-    text-align: center;
-    background: linear-gradient(135deg, #1e293b, #111827);
-    color: #e2e8f0;
-    border-radius: 10px;
-    margin: 20px auto;
-    opacity: 0; /* Hidden by default for animation */
-    transform: translateY(30px); /* Start slightly below view */
-    animation: fadeInUp 2s ease-out forwards; /* Trigger animation */
-  }
-  
-  .other-section h2 {
-    font-size: 2rem;
-    color: #94a3b8;
-  }
-  
-  /* Keyframes for Animations */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px); /* Starting position */
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0); /* End position */
-    }
-  }
-  
-  @keyframes slideInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-50px); /* Start from left */
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0); /* Final position */
-    }
-  }
-  
